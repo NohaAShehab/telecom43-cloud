@@ -1,0 +1,21 @@
+
+
+1- install django
+
+2- create project telecom blog
+
+3- create application in telecom blog ---> posts
+
+4- create 2 pages in posts application
+    posts = [
+        [1, 'post1','description ,'img1.png'],
+         [1, 'post1','description ,'img1.png'],
+          [1, 'post1','description ,'img1.png'],
+    ]
+    list all posts
+
+    post details
+    post/<id>
+     [1, 'post1','description ,'img1.png'],
+
+     ==> images in static files
