@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Amazon.apps.AmazonConfig'
+    'Amazon.apps.AmazonConfig',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
@@ -75,10 +76,21 @@ WSGI_APPLICATION = 'telecom.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'telecom43',
+        'USER': 'telecom43',
+        'PASSWORD': 'iti',
+        'HOST': 'localhost',
+        'PORT': '5432',
+
+}
+
 }
 
 
@@ -122,3 +134,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+# base url of media files
+MEDIA_URL = '/media/'
+## get full path of the media folder
+MEDIA_ROOT = os.path.join('media/')

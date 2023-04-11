@@ -15,7 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf.urls.static import  static
+from django.conf import settings
+
 from Amazon.views import helloworld, homepage, homeuser, returndatatypes, userid, \
     profile, allproducts,showproduct
 urlpatterns = [
@@ -27,5 +30,6 @@ urlpatterns = [
     path('user/<int:id>', userid, name='userid'),
     path('profile',profile, name='profile' ),
     path('products/index',allproducts, name='allproducts' ),
-    path('products/<int:id>/show',showproduct, name='product.show' )
-]
+    path('products/<int:id>/show',showproduct, name='product.show' ),
+    path('products/', include('Amazon.urls'))
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

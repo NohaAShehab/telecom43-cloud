@@ -19,3 +19,15 @@
      [1, 'post1','description ,'img1.png'],
 
      ==> images in static files
+
+
+[apple-banana-test]
+
+-----
+
+----------------------- task 02 -----
+connect to postgres
+complete crud operations on POSTs
+post (title, details, image , category)
+
+
